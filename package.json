@@ -1,9 +1,11 @@
 {
     "name": "weather-app-backend",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "Weather App REST API",
+    "main": "dist/app.js",
     "scripts": {
+        "tsc": "tsc",
+        "start": "npm run tsc && node ./dist/app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -24,12 +26,6 @@
     "homepage": "https://github.com/m0ai/weather-app-backend#readme",
     "dependencies": {
         "express": "^4.17.1"
-    },
-    "DevDependencies": {
-        "@types/express": "^4.17.2",
-        "source-map-support": "^0.5.16",
-        "tslint": "^6.0.0",
-        "typescript": "^3.7.5"
     },
     "devDependencies": {
         "@types/express": "^4.17.8",
