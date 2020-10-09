@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { UsersService } from '../services/user.services'
 
 export class UsersController {
