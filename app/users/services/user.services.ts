@@ -1,7 +1,7 @@
 import { CRUD } from '../../common/interfaces/crud.interface'
 import { GenericInMemoryDao } from '../daos/in.memory.dao'
 
-export class UsersService implements CRUD{
+export class UsersService implements CRUD {
     private static instance: UsersService
     dao: GenericInMemoryDao
 
@@ -10,8 +10,8 @@ export class UsersService implements CRUD{
     }
 
     static getInstance(): UsersService {
-        if (!UsersService) {
-            this.instance = new UsersService()
+        if (!UsersService.instance) {
+            UsersService.instance = new UsersService()
         }
         return UsersService.instance
     }

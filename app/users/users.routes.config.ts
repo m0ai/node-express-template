@@ -1,12 +1,12 @@
 import { CommonRoutesConfig, configureRoutes } from '../common/common.routes.config'
-
-import express from 'express'
 import { UsersController } from './controllers/users.controller';
 
+import express from 'express'
 
-export class UserRoutes extends CommonRoutesConfig implements configureRoutes {
+
+export class UsersRoutes extends CommonRoutesConfig implements configureRoutes {
   constructor(app: express.Application) {
-    super(app, 'UserRoutes')
+    super(app, 'UsersRoutes')
     this.configureRoutes();
   }
 
