@@ -10,19 +10,20 @@ const server: http.Server = http.createServer(app)
 const port = 3000
 const routes: any = []
 
-app.use(express.json({limit: '5mb'}));
-app.use(express.urlencoded({extended: false}));
+app.use(express.json({limit: '5mb'}))
+app.use(express.urlencoded({extended: false}))
 
 routes.push(new UsersRoutes(app))
 
-
 app.get('/', (req: express.Request, res: express.Response) =>{
     res.status(200).send(`Server running at port ${port}`)
-});
+})
 
 server.listen(port, () => {
     console.log(`Server running at port ${port}`)
     routes.forEach((route: CommonRoutesConfig) => {
         console.log(`Routes configured for ${route.getName()}`)
-    });
-});
+    })
+})
+
+export default app

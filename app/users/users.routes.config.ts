@@ -15,26 +15,26 @@ export class UsersRoutes extends CommonRoutesConfig implements configureRoutes {
 
     this.app.get(`/users`, [
       usersController.listUsers
-    ]);
+    ])
 
     this.app.post(`/users`, [
       usersController.createUser
-    ]);
+    ])
 
     this.app.put(`/users/:userId`, [
       usersController.put
-    ]);
+    ])
 
     this.app.patch(`/users/:userId`, [
       usersController.patch
-    ]);
+    ])
 
     this.app.delete(`/users/:userId`, [
       usersController.removeUser
-    ]);
+    ])
 
     this.app.get(`/users/:userId`, [
       usersController.getUserById
-    ]);
+    ])
   }
 }
