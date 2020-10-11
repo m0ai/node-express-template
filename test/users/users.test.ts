@@ -16,8 +16,8 @@ it('should POST /users', async function () {
   expect(res.status).to.equal(201)
   expect(res.body).not.to.be.empty
   expect(res.body).to.be.an("object")
-  expect(res.body.id).to.be.an("string")
-  firstUserIdTest = res.body.id
+  expect(res.body._id).to.be.an("string")
+  firstUserIdTest = res.body._id
 })
 
 it('should GET /users/:userId', async function () {
@@ -25,10 +25,10 @@ it('should GET /users/:userId', async function () {
   expect(res.status).to.equal(200)
   expect(res.body).not.to.be.empty
   expect(res.body).to.be.an('object')
-  expect(res.body.id).to.be.an('string')
+  expect(res.body._id).to.be.an('string')
   expect(res.body.name).to.be.equal(firstUserBody.name)
   expect(res.body.email).to.be.equal(firstUserBody.email)
-  expect(res.body.id).to.be.equal(firstUserIdTest)
+  expect(res.body._id).to.be.equal(firstUserIdTest)
 })
 
 it(`should GET /users`, async function () {
@@ -36,10 +36,10 @@ it(`should GET /users`, async function () {
   expect(res.status).to.equal(200)
   expect(res.body).not.to.be.empty
   expect(res.body).to.be.an("array")
-  expect(res.body[0].id).to.be.an('string')
+  expect(res.body[0]._id).to.be.an('string')
   expect(res.body[0].name).to.be.equals(firstUserBody.name)
   expect(res.body[0].email).to.be.equals(firstUserBody.email)
-  expect(res.body[0].id).to.be.equals(firstUserIdTest)
+  expect(res.body[0]._id).to.be.equals(firstUserIdTest)
 })
 
 it('should PUT /users/:userId', async function () {
@@ -56,11 +56,10 @@ it(`should GET /users/:userId to have a new name`, async function () {
   expect(res.status).to.equal(200)
   expect(res.body).not.to.be.empty
   expect(res.body).to.be.an('object')
-  expect(res.body.id).to.be.an('string')
-
+  expect(res.body._id).to.be.an('string')
   expect(res.body.name).to.be.not.equals(firstUserBody.name)
   expect(res.body.email).to.be.equals(firstUserBody.email)
-  expect(res.body.id).to.be.equals(firstUserIdTest)
+  expect(res.body._id).to.be.equals(firstUserIdTest)
 })
 
 it('should PATCH /users/:userId', async function () {
@@ -74,7 +73,7 @@ it(`should GET /users/:userId to have a new field called description`, async fun
   expect(res.status).to.equal(200)
   expect(res.body).not.to.be.empty
   expect(res.body).to.be.an('object')
-  expect(res.body.id).to.be.an('string')
+  expect(res.body._id).to.be.an('string')
   expect(res.body.description).to.be.equals('First Korean')
 })
 

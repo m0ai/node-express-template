@@ -1,5 +1,6 @@
 import { CRUD } from '../../common/interfaces/crud.interface'
 import { GenericInMemoryDao } from '../daos/in.memory.dao'
+import { UsersDao } from '../daos/users.dao'
 
 export class UsersService implements CRUD {
   private static instance: UsersService
@@ -17,30 +18,30 @@ export class UsersService implements CRUD {
   }
 
   create(resource: any) {
-    return this.dao.addUser(resource)
+    return UsersDao.getInstance().addUser(resource)
   }
 
   deleteById(resourceId: any) {
-    return this.dao.removeUserById(resourceId)
+    return UsersDao.getInstance().removeUserById(resourceId)
   }
 
   list(limit: number, page: number) {
-    return this.dao.getUsers()
+    return UsersDao.getInstance().listUser()
   }
 
   patchById(resource: any) {
-    return this.dao.patchUserById(resource)
+    return UsersDao.getInstance().patchUser(resource)
   }
 
   readById(resourceId: any) {
-    return this.dao.getUserById(resourceId)
+    return UsersDao.getInstance().getUserById(resourceId)
   }
 
   getByEmail(email: string) {
-    return this.dao.getByEmail(email)
+    return UsersDao.getInstance().getUserByEmail(email)
   }
 
   updateById(resource: any) {
-    return this.dao.putUserById(resource)
+    return UsersDao.getInstance().patchUser(resource)
   }
 }

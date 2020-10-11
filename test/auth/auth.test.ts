@@ -20,8 +20,8 @@ it('should POST /users', async () => {
   expect(res.status).to.equal(201)
   expect(res.body).not.to.be.empty
   expect(res.body).to.be.an('object')
-  expect(res.body.id).to.be.an('string')
-  firstUserIdTest = res.body.id
+  expect(res.body._id).to.be.an('string')
+  firstUserIdTest = res.body._id
 })
 
 it(`should POST to /auth and retrieve an access token`, async () => {
