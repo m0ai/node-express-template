@@ -20,7 +20,7 @@ export class UsersMiddleware {
     }
   }
 
-  async validateSameEmailDoesntExists(req: express.Request, res: express.Response, next: express.NextFunction) {
+  async validateSameEmailDoesntExist(req: express.Request, res: express.Response, next: express.NextFunction) {
     const usersService = UsersService.getInstance()
     const user = await usersService.getByEmail(req.body.email)
     if (user) {
