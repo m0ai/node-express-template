@@ -30,12 +30,14 @@
         "argon2-pass": "^1.0.2",
         "express": "^4.17.1",
         "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.10.9",
         "short-uuid": "^4.1.0"
     },
     "devDependencies": {
         "@types/chai": "^4.2.13",
         "@types/express": "^4.17.8",
         "@types/mocha": "^8.0.3",
+        "@types/mongoose": "^5.7.36",
         "@types/node": "^14.11.8",
         "@types/nodemon": "^1.19.0",
         "@types/supertest": "^2.0.10",

@@ -4,11 +4,19 @@ services:
     command: npm run test-dev
     build: .
     volumes:
-      - ./api:/app
+      - ./app:/usr/src/app/app
     networks:
       - backend
     ports:
       - 3000:3000
+  mongo:
+    image: mongo:4.4-bionic
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+    ports:
+      - 27017:27017
 
 networks:
   backend:
