@@ -26,7 +26,10 @@
     },
     "homepage": "https://github.com/m0ai/weather-app-backend#readme",
     "dependencies": {
-        "express": "^4.17.1"
+        "argon2-pass": "^1.0.2",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "short-uuid": "^4.1.0"
     },
     "devDependencies": {
         "@types/chai": "^4.2.13",

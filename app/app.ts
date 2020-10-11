@@ -3,6 +3,7 @@ import * as http from 'http'
 
 import { CommonRoutesConfig } from './common/common.routes.config'
 import { UsersRoutes } from './users/users.routes.config'
+import { AuthRoutes } from './auth/auth.routes.config'
 
 
 const app: express.Application = express()
@@ -14,6 +15,7 @@ app.use(express.json({limit: '5mb'}))
 app.use(express.urlencoded({extended: false}))
 
 routes.push(new UsersRoutes(app))
+routes.push(new AuthRoutes(app))
 
 app.get('/', (req: express.Request, res: express.Response) =>{
     res.status(200).send(`Server running at port ${port}`)
