@@ -18,7 +18,6 @@ it('should POST /users', async function () {
   expect(res.body).to.be.an("object")
   expect(res.body.id).to.be.an("string")
   firstUserIdTest = res.body.id
-  console.log(res.body)
 })
 
 it('should GET /users/:userId', async function () {
